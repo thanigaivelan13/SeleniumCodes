@@ -16,5 +16,6 @@ public class date{
         driver.findElement(By.xpath("//button[text()='"+year+"']")).click();
         driver.findElements(By.cssSelector(".react-calendar__year-view__months__month")).get(Integer.parseInt(month)-1).click();
         driver.findElement(By.xpath("//abbr[text()='"+date+"']")).click();
+        //
     }
 }
