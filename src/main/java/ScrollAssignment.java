@@ -18,6 +18,10 @@ public class ScrollAssignment {
         Scanner value = new Scanner(System.in);
         System.out.println("Enter Row number: ");
         int rowNumber = Integer.parseInt(value.nextLine());
+        if(rowNumber>rowCount){
+            System.out.println("Invalid Row Number");
+            System.exit(0);
+        }
         System.out.println("Row Value is:\n" + rowValues.get(rowNumber-1).getText());
         //System.out.println("Value is: "+rowNumber);
 
