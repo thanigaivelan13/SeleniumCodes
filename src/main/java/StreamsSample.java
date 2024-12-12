@@ -1,4 +1,6 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,6 +46,12 @@ public class StreamsSample {
         names.stream().filter(s -> s.startsWith("A")).sorted().map(s -> s.toLowerCase()).
                 forEach(s -> System.out.println(s));
         Stream<String> combinedStream = Stream.concat(names.stream(), names1.stream());
-        combinedStream.forEach(s -> System.out.println(s));
+      //  combinedStream.forEach(s -> System.out.println(s));
+        boolean flag = combinedStream.anyMatch(s -> s.equalsIgnoreCase("dbc"));
+        SoftAssert a = new SoftAssert();
+        a.assertTrue(flag);
+        a.assertAll();
+       // stream().distinct() -> unique values in the list
+        //sorted() -> sort the list of values
     }
 }
